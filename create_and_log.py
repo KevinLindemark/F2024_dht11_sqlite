@@ -7,8 +7,7 @@ from time import sleep
 query = """CREATE TABLE IF NOT EXISTS dht11(
         datetime TEXT NOT NULL,
         temperature REAL NOT NULL,
-        humidity REAL NOT NULL
-        );"""
+        humidity REAL NOT NULL);"""
 try: # Forbind til database og opret table
     conn = sqlite3.connect("dht11_data.db")
     cur = conn.cursor()
@@ -45,4 +44,5 @@ while True:
     else:
         print('Failed to get reading. Try again!')
     sleep(10) # Vent 10 sekunder mellem hver gang data indsættes
+
     
